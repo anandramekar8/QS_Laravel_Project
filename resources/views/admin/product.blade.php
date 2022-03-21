@@ -17,6 +17,7 @@
                                                 <th>ID</th>
                                                 <th>Name</th>
                                                 <th>Slug</th>
+                                                <th>Image</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -26,6 +27,11 @@
                                                 <td>{{$list->id}}</td>
                                                 <td>{{$list->name}}</td>
                                                 <td>{{$list->slug}}</td>
+                                                <td>
+                                                  @if($list->image!='')
+                                                  <img width="100px" src="{{asset('storage/media/'.$list->image)}}" alt="img">
+                                                  @endif
+                                                </td>
                                                 <td>
                                                     <a href="{{url('admin/product/manage_product/')}}/{{$list->id}}">
                                                         <button type="button" class="btn btn-primary">

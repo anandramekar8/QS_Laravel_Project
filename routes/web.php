@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('admin/welcome');
 });
 
 
@@ -45,6 +45,8 @@ Route::group(['middleware'=>'admin_auth'],function(){
     Route::get('admin/category/manage_category/{id}',[CategoryController::class, 'manage_category']);
 
     Route::get('admin/category/status/{status}/{id}',[CategoryController::class, 'status']);
+
+    
 
     //-------------------------Size Routes
 
@@ -89,6 +91,8 @@ Route::group(['middleware'=>'admin_auth'],function(){
     Route::get('admin/product/manage_product/{id}',[ProductController::class, 'manage_product']);
 
     Route::get('admin/product/status/{status}/{id}',[ProductController::class, 'status']);
+
+    Route::get('admin/product/product_attr_delete/{paid}/{pid}',[ProductController::class, 'product_attr_delete']);
 
 
     Route::get('admin/logout', function () {

@@ -4,6 +4,6 @@
 @section('container')
 
 <div class="row">
-      <h1>Dashboard</h1>
+      <h1>Admin Panel</h1>
 </div>
 @endsection
